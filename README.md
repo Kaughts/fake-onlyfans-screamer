@@ -65,3 +65,4 @@ This project is open-source and licensed under the [MIT License](LICENSE). Feel 
 ---
 
 Enjoy using the Fake OnlyFans Screamer to bring some humor and surprises to your audience. Have fun, but always prioritize the well-being and comfort of your users.
+(btw this was all written by ai cause im lazy af alr)
