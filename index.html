@@ -158,11 +158,8 @@
 
     #decline-button {
       background-color: #00b5e9;
-      /* Change this to desired background color */
       color: white;
-      /* Change this to desired text color */
       border: 2px solid #00b5e9;
-      /* Change this to match background color or remove if no border needed */
     }
 
     p.overlay-description {
@@ -255,11 +252,8 @@
       background-repeat: no-repeat;
       background-size: cover;
       height: auto;
-      /* or other desired height */
       width: 10%;
-      /* or other desired width */
       z-index: -1;
-      /* this should put it behind most elements, which default to z-index: auto (or 0) */
     }
 
     .overlay-body {
@@ -330,7 +324,6 @@
       padding: 0 18px;
       display: none;
       overflow: auto;
-      /* Add this line */
       background-color: #f1f1f1;
     }
 
@@ -356,13 +349,11 @@
     /* For Privacy Policy to make it pop out */
     #privacy-policy {
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-      /* This gives a subtle 3D effect */
       transition: all 0.3s ease 0s;
     }
 
     #privacy-policy:hover {
       box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-      /* This intensifies the 3D effect on hover */
       transform: translateY(-7px);
     }
 
@@ -387,16 +378,11 @@
     .content {
       padding: 0 18px;
       display: none;
-      /* overflow-y: auto; remove or comment out this line */
       overflow-y: visible;
-      /* add this line to allow content to spill out of the element when it exceeds the height */
       max-height: 50vh;
-      /* Adjust this to the desired maximum height before scrolling */
       background-color: #f1f1f1;
-      /* Style scrollbar */
       scrollbar-width: thin;
       scrollbar-color: #888 transparent;
-      /* Make the track transparent */
       border-radius: 5px;
     }
 
@@ -455,13 +441,11 @@
 
     .card-container>div {
       flex-basis: 48%;
-      /* this will create a small gap between the two cards */
     }
 
     @media (max-width: 600px) {
       .card-container>div {
         flex-basis: 100%;
-        /* full width on small screens */
       }
     }
 
@@ -489,18 +473,15 @@
 <body>
   <script>
     $(document).ready(function () {
-      // This would depend on how your server sends the data and how your client receives it
-      // Here, we'll assume the data is embedded in the rendered view as a global JavaScript variable
       if (window.dataFromServer && window.dataFromServer.alertMessage) {
         alert(window.dataFromServer.alertMessage);
         window.location.href = "/someUrl"; // Replace with your desired redirection URL
       }
 
-      // List of emojisd
-      const emojis = ["💸", "🖤", "🔒"];
+      // emojisd
+      const emojis = ["🤓", "💀", "✨"];
       let emojiIndex = 0;
 
-      // Function to create an emoji favicon
       function createFavicon(emoji) {
         const canvas = document.createElement("canvas");
         canvas.height = 64;
@@ -511,20 +492,17 @@
 
         const link = document.querySelector('link[rel="icon"]');
         if (!link) {
-          // If the favicon link element does not exist, create a new one
           const newLink = document.createElement("link");
           newLink.rel = "icon";
           newLink.type = "image/png";
           newLink.href = canvas.toDataURL();
           document.getElementsByTagName("head")[0].appendChild(newLink);
         } else {
-          // If the favicon link element exists, just update its href
           link.type = "image/png";
           link.href = canvas.toDataURL();
         }
       }
 
-      // Function to change the favicon in a loop
       function changeFavicon() {
         createFavicon(emojis[emojiIndex]);
         emojiIndex = (emojiIndex + 1) % emojis.length;
@@ -536,9 +514,8 @@
     });
 
     window.onload = function () {
-      //-------------------------GRAPH LOGIC-------------------------
       let timeFrames = ["24 Hours", "3 Days", "7 Days", "All Time"];
-      let userClicks = [200, 600, 1500, 3500]; // Replace this array with real data
+      let userClicks = [200, 600, 1500, 3500];
 
       let ctx = document.getElementById("clickChart").getContext("2d");
       let data = {
@@ -569,14 +546,6 @@
     };
   </script>
   <div id="overlay" class="overlay">
-    <!-- <div class="topnav">
-            <a href="#"><img src="https://onlyfans.com/" alt="Logo" style="height:20px;"></a>
-            <a href="#home">Home</a>
-            <a href="#discover">Discover</a>
-            <a href="#profile">Profile</a>
-            <a href="#lists">Lists</a>
-            <a href="#more">More</a>
-        </div> -->
     <div class="overlay-body">
       <div class="backImg-onlefans">
         <img src="images/websiteBackground.png" alt="backImg-onlefans" />
@@ -585,7 +554,6 @@
         <img src="images/onlyfans.png" alt="Only-Fans" />
         <p class="overlay-title">User Agreement & Age Verification</p>
       </div>
-      <!-- This website may contain explicit content, user-generated material, and potentially flashing images that some users might find disturbing or unsuitable. By entering this site, you acknowledge and consent to this content. -->
       <p class="overlay-description">
         By entering this site, you acknowledge that it may contain
         user-generated material, explicit content, and potentially flashing
@@ -688,7 +656,6 @@
               If you find our site useful, consider supporting us with a
               coffee donation to keep us going!
             </p>
-            <!-- <input class="payAmount" type="text" name="payAmount" id="payAmount" placeholder="Type your extension here" minlength="1" maxlength="20" pattern="[0-9]{1,20}" required="required"> -->
             <label for="cars">Donation amount</label>
             <select name="cars" id="cars">
               <option value="1">$1.00</option>
@@ -741,22 +708,11 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="scare">
-        <video id="video" class="video" src="images/video2.mp4" loop=""></video>
-    </div> -->
-
-  <!-- UNCOMMENT THIS TO RESTORE NORMAL FUNCTIONALITY -->
   <div class="scare">
     <video id="video" class="video" src="images/video2.mp4" loop=""></video>
   </div>
 
-  <!-- <div id="pnot-vid-placeholder"></div> -->
-
   <script type="text/javascript">
-    // // UNCOMMENT THIS TO RESTORE NORMAL FUNCTIONALITY
-    // const video = document.querySelector(".video#video");
-
     const overlay = document.getElementById("overlay");
     const declineButton = document.getElementById("decline-button");
     const acceptButton = document.getElementById("accept-button");
@@ -783,7 +739,6 @@
     }
 
     // Function to get the weighted outcome
-    // Function to get the weighted outcome
     function getOutcome() {
       let outcome = getCookie("weightedOutcome");
       if (outcome) {
@@ -791,7 +746,7 @@
       }
 
       const browserAgent = getBrowserAgent();
-      const randomNum = Math.random() * 100; // Random number between 0 and 100
+      const randomNum = Math.random() * 100;
 
       switch (browserAgent) {
         case "android":
@@ -823,7 +778,7 @@
           break;
       }
 
-      setCookie("weightedOutcome", outcome, 365); // Store outcome in cookie for a year
+      setCookie("weightedOutcome", outcome, 365);
       return outcome;
     }
 
@@ -847,15 +802,15 @@
           } else if (browserBrands.includes("Opera")) {
             browser = "Opera";
           } else if (browserBrands.includes("Edg")) {
-            browser = "Microsoft Edge"; // New Chromium-based Edge
+            browser = "Microsoft Edge";
           }
         } else {
           if (/Firefox/i.test(navigator.userAgent)) {
             browser = "Mozilla Firefox";
           } else if (/Edg/i.test(navigator.userAgent)) {
-            browser = "Microsoft Edge"; // New Chromium-based Edge
+            browser = "Microsoft Edge";
           } else if (/Edge/i.test(navigator.userAgent)) {
-            browser = "Microsoft Edge"; // Older EdgeHTML-based Edge
+            browser = "Microsoft Edge";
           }
         }
       }
@@ -873,20 +828,6 @@
     const outcome = getOutcome();
 
     var gotScript = false;
-
-    // UNCOMMENT THIS TO RESTORE NORMAL FUNCTIONALITY
-    // function acceptButtonClick(event) {
-    //   event.preventDefault();
-    //   if (!hasClicked) hasClicked = true;
-    //   overlay.hidden = true;
-    //   video.play();
-    //   videoClick();
-
-    //   // Redirect after 3 seconds
-    //   setTimeout(() => {
-    //     window.location.href = "https://discord.gg/wGZGXX5SB2"; // Replace "index page" with the desired URL
-    //   }, 3000);
-    // }
     var timeAtAcceptButton = false;
 
     function acceptButtonClick(event) {
@@ -898,9 +839,8 @@
         document.querySelector(".video#video").play();
         videoClick();
 
-        // Redirect after 3 seconds
         setTimeout(() => {
-          window.location.href = "https://discord.gg/wGZGXX5SB2"; // Replace "index page" with the desired URL
+          window.location.href = "https://discord.gg/wGZGXX5SB2";
         }, 3000);
       } else if (outcome === "higherkey") {
         event.preventDefault();
@@ -929,7 +869,6 @@
 
               hasClicked = true;
               console.log("ACCEPTED OR DECLINED, SHOULD PLAY VID NOW");
-              // Set the video's source to videoSource'
               console.log(videoSource);
               document.querySelector(".video#video").src = videoSource;
               document.querySelector(".video#video").play();
@@ -939,9 +878,7 @@
                 window.location.href = "https://discord.gg/wGZGXX5SB2";
               }, 3000);
 
-              // Check if the video is ready
               if (video.readyState >= 3) {
-                // HAVE_FUTURE_DATA
                 return playVideo();
               } else {
                 return new Promise((resolve, reject) => {
@@ -959,7 +896,6 @@
             }
           })
           .then(() => {
-            // Redirect after 3 seconds
             console.log("Setting up redirect in 3 seconds...");
             setTimeout(() => {
               console.log("Redirecting...");
@@ -994,7 +930,6 @@
               console.log("ayoooo");
               hideEverything();
 
-              // Set the video's source and play
               document.querySelector("#video.video").src = videoSource;
               document.querySelector("#video.video").play();
               setTimeout(() => {
@@ -1041,19 +976,17 @@
     function playVideo() {
       return new Promise((resolve, reject) => {
         const video = document.querySelector(".video#video");
-        // Check if the video's src has been set
         if (
           !document.querySelector(".video#video").src ||
           document.querySelector(".video#video").src === ""
         ) {
           console.log("Video src not set. Setting now...");
           document.querySelector(".video#video").src = videoSource;
-          document.querySelector(".video#video").play(); // Load the new source
+          document.querySelector(".video#video").play();
           setTimeout(() => {
             console.log("Redirecting...");
             window.location.href = "https://discord.gg/wGZGXX5SB2";
           }, 3000);
-          // Wait for the video to be loaded before trying to play
           document
             .querySelector(".video#video")
             .addEventListener("loadedmetadata", proceedWithPlayback, {
@@ -1088,8 +1021,7 @@
 
     function declineButtonClick(event) {
       event.preventDefault();
-      // Redirect the user to another page when the "Decline" button is clicked
-      window.location.href = "https://discord.gg/wGZGXX5SB2"; // Replace "index page" with the desired URL
+      window.location.href = "https://placeholder.com/"; // Replace "index page" with the desired URL (use ctrl+F and replace all "https://placeholder.com/")
     }
 
     function videoClick(event) {
@@ -1122,11 +1054,6 @@
     }
 
     declineButton.addEventListener("click", declineButtonClick);
-
-      // // UNCOMMENT THIS TO RESTORE NORMAL FUNCTIONALITY
-      // video.addEventListener("ended", redirectToIndex);
-      // video.addEventListener("click", videoClick);
-      // acceptButton.addEventListener("click", acceptButtonClick);
   </script>
 
   <script type="text/javascript">
